@@ -24,7 +24,7 @@ IFS=$'\n\t'
 ENDPOINT="route53.amazonaws.com"
 RECORD_TTL=300
 #RECORD_NAME=""
-RECORD_TYPE="A"
+#RECORD_TYPE="A"
 #RECORD_VALUE=""
 #HOSTED_ZONE_ID=""
 API_PATH="/2013-04-01/hostedzone/${HOSTED_ZONE_ID}/rrset/"
@@ -61,7 +61,7 @@ request_body="<?xml version=\"1.0\" encoding=\"UTF-8\"?> \
          <Action>UPSERT</Action> \
          <ResourceRecordSet> \
             <Name>${RECORD_NAME}</Name> \
-            <Type>${RECORD_TYPE}</Type> \
+            <Type>${RECORD_TYPE:="A"}</Type> \
             <TTL>${RECORD_TTL}</TTL> \
             <ResourceRecords> \
                <ResourceRecord> \
